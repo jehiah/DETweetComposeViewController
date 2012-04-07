@@ -27,21 +27,21 @@
 UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverControllerDelegate, DETweetAccountSelectorViewControllerDelegate,
 DETweetPosterDelegate, TwitterDialogDelegate, TwitterLoginDialogDelegate>
 
-@property ( nonatomic) IBOutlet DETweetSheetCardView *cardView;
-@property ( nonatomic) IBOutlet UILabel *titleLabel;
-@property ( nonatomic) IBOutlet UIButton *cancelButton;
-@property ( nonatomic) IBOutlet UIButton *sendButton;
-@property ( nonatomic) IBOutlet UIView *cardHeaderLineView;
-@property ( nonatomic) IBOutlet DETweetTextView *textView;
-@property ( nonatomic) IBOutlet UIView *textViewContainer;
-@property ( nonatomic) IBOutlet UIImageView *paperClipView;
-@property ( nonatomic) IBOutlet UIImageView *attachment1FrameView;
-@property ( nonatomic) IBOutlet UIImageView *attachment2FrameView;
-@property ( nonatomic) IBOutlet UIImageView *attachment3FrameView;
-@property ( nonatomic) IBOutlet UIImageView *attachment1ImageView;
-@property ( nonatomic) IBOutlet UIImageView *attachment2ImageView;
-@property ( nonatomic) IBOutlet UIImageView *attachment3ImageView;
-@property ( nonatomic) IBOutlet UILabel *characterCountLabel;
+@property (weak, nonatomic) IBOutlet DETweetSheetCardView *cardView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UIView *cardHeaderLineView;
+@property (weak, nonatomic) IBOutlet DETweetTextView *textView;
+@property (weak, nonatomic) IBOutlet UIView *textViewContainer;
+@property (weak, nonatomic) IBOutlet UIImageView *paperClipView;
+@property (weak, nonatomic) IBOutlet UIImageView *attachment1FrameView;
+@property (weak, nonatomic) IBOutlet UIImageView *attachment2FrameView;
+@property (weak, nonatomic) IBOutlet UIImageView *attachment3FrameView;
+@property (weak, nonatomic) IBOutlet UIImageView *attachment1ImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *attachment2ImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *attachment3ImageView;
+@property (weak, nonatomic) IBOutlet UILabel *characterCountLabel;
 
     // Public
 + (void)displayNoTwitterAccountsAlert;

@@ -187,11 +187,11 @@
 
 - (void)addTweetContent:(id)tcvc
 {
-    [tcvc addImage:[UIImage imageNamed:@"YawkeyBusinessDog.jpg"]];
-    [tcvc addImage:[UIImage imageNamed:@"YawkeyCleanTeeth.jpg"]];  // This one won't actually work. Only one image per tweet allowed currently by Twitter.
-    [tcvc addURL:[NSURL URLWithString:@"http://www.DoubleEncore.com/"]];
-    [tcvc addURL:[NSURL URLWithString:@"http://www.apple.com/ios/features.html#twitter"]];
-    [tcvc addURL:[NSURL URLWithString:@"http://www.twitter.com/"]];  // This won't work either. Only three URLs allowed, just like Apple's implementation.
+//    [tcvc addImage:[UIImage imageNamed:@"YawkeyBusinessDog.jpg"]];
+//    [tcvc addImage:[UIImage imageNamed:@"YawkeyCleanTeeth.jpg"]];  // This one won't actually work. Only one image per tweet allowed currently by Twitter.
+//    [tcvc addURL:[NSURL URLWithString:@"http://www.DoubleEncore.com/"]];
+//    [tcvc addURL:[NSURL URLWithString:@"http://www.apple.com/ios/features.html#twitter"]];
+//    [tcvc addURL:[NSURL URLWithString:@"http://www.twitter.com/"]];  // This won't work either. Only three URLs allowed, just like Apple's implementation.
     NSString *tweetText = [self.tweets objectAtIndex:arc4random() % [self.tweets count]];
     [tcvc setInitialText:tweetText];
 }

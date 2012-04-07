@@ -36,18 +36,18 @@ static BOOL waitingForAccess = NO;
 @interface DETweetComposeViewController ()
 
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) NSMutableArray *images;
-@property (nonatomic) NSMutableArray *urls;
-@property (nonatomic) NSArray *attachmentFrameViews;
-@property (nonatomic) NSArray *attachmentImageViews;
+@property (nonatomic, retain) NSMutableArray *images;
+@property (nonatomic, retain) NSMutableArray *urls;
+@property (nonatomic, retain) NSArray *attachmentFrameViews;
+@property (nonatomic, retain) NSArray *attachmentImageViews;
 @property (nonatomic) UIStatusBarStyle previousStatusBarStyle;
-@property (nonatomic, unsafe_unretainedunsafe_unretained) UIViewController *fromViewController;
-@property (nonatomic) UIImageView *backgroundImageView;
-@property (nonatomic) DETweetGradientView *gradientView;
-@property (nonatomic) UIPickerView *accountPickerView;
-@property (nonatomic) UIPopoverController *accountPickerPopoverController;
+@property (nonatomic, unsafe_unretained) UIViewController *fromViewController;
+@property (nonatomic, retain) UIImageView *backgroundImageView;
+@property (nonatomic, retain) DETweetGradientView *gradientView;
+@property (nonatomic, retain) UIPickerView *accountPickerView;
+@property (nonatomic, retain) UIPopoverController *accountPickerPopoverController;
 @property (nonatomic) id twitterAccount;  // iOS 5 use only.
-@property (nonatomic) OAuth *oAuth;
+@property (nonatomic, retain) OAuth *oAuth;
 
 - (void)tweetComposeViewControllerInit;
 - (void)updateFramesForOrientation:(UIInterfaceOrientation)interfaceOrientation;

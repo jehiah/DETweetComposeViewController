@@ -23,10 +23,10 @@
 
 @interface DETweetTextView ()
 
-@property (nonatomic) DERuledView *ruledView;
-@property (nonatomic) UIButton *fromButton;
-@property (nonatomic) UIButton *accountButton;
-@property (nonatomic) UIImageView *accountLine;
+@property (nonatomic, retain) DERuledView *ruledView;
+@property (nonatomic, retain) UIButton *fromButton;
+@property (nonatomic, retain) UIButton *accountButton;
+@property (nonatomic, retain) UIImageView *accountLine;
 
 - (void)textViewInit;
 - (CGRect)ruledViewFrame;

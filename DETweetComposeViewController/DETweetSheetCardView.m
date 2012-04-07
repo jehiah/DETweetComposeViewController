@@ -22,7 +22,7 @@
 
 @interface DETweetSheetCardView ()
 
-@property (nonatomic) UIView *backgroundView;
+@property (nonatomic, retain) UIView *backgroundView;
 
 - (void)tweetSheetCardViewInit;
 
