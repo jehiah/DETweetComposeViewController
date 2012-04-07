@@ -27,21 +27,21 @@
 UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverControllerDelegate, DETweetAccountSelectorViewControllerDelegate,
 DETweetPosterDelegate, TwitterDialogDelegate, TwitterLoginDialogDelegate>
 
-@property (retain, nonatomic) IBOutlet DETweetSheetCardView *cardView;
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
-@property (retain, nonatomic) IBOutlet UIButton *cancelButton;
-@property (retain, nonatomic) IBOutlet UIButton *sendButton;
-@property (retain, nonatomic) IBOutlet UIView *cardHeaderLineView;
-@property (retain, nonatomic) IBOutlet DETweetTextView *textView;
-@property (retain, nonatomic) IBOutlet UIView *textViewContainer;
-@property (retain, nonatomic) IBOutlet UIImageView *paperClipView;
-@property (retain, nonatomic) IBOutlet UIImageView *attachment1FrameView;
-@property (retain, nonatomic) IBOutlet UIImageView *attachment2FrameView;
-@property (retain, nonatomic) IBOutlet UIImageView *attachment3FrameView;
-@property (retain, nonatomic) IBOutlet UIImageView *attachment1ImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *attachment2ImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *attachment3ImageView;
-@property (retain, nonatomic) IBOutlet UILabel *characterCountLabel;
+@property ( nonatomic) IBOutlet DETweetSheetCardView *cardView;
+@property ( nonatomic) IBOutlet UILabel *titleLabel;
+@property ( nonatomic) IBOutlet UIButton *cancelButton;
+@property ( nonatomic) IBOutlet UIButton *sendButton;
+@property ( nonatomic) IBOutlet UIView *cardHeaderLineView;
+@property ( nonatomic) IBOutlet DETweetTextView *textView;
+@property ( nonatomic) IBOutlet UIView *textViewContainer;
+@property ( nonatomic) IBOutlet UIImageView *paperClipView;
+@property ( nonatomic) IBOutlet UIImageView *attachment1FrameView;
+@property ( nonatomic) IBOutlet UIImageView *attachment2FrameView;
+@property ( nonatomic) IBOutlet UIImageView *attachment3FrameView;
+@property ( nonatomic) IBOutlet UIImageView *attachment1ImageView;
+@property ( nonatomic) IBOutlet UIImageView *attachment2ImageView;
+@property ( nonatomic) IBOutlet UIImageView *attachment3ImageView;
+@property ( nonatomic) IBOutlet UILabel *characterCountLabel;
 
     // Public
 + (void)displayNoTwitterAccountsAlert;

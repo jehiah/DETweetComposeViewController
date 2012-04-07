@@ -52,7 +52,7 @@ NSString * const twitterStatusKey = @"status";
     if (![UIDevice de_isIOS5]) {
         return nil;
     }
-    ACAccountStore *accountStore = [[[ACAccountStore alloc] init] autorelease];
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
     return twitterAccounts;
@@ -65,7 +65,6 @@ NSString * const twitterStatusKey = @"status";
 {
     _delegate = nil;
     
-    [super dealloc];
 }
 
 
@@ -115,7 +114,7 @@ NSString * const twitterStatusKey = @"status";
         }
             // There appears to be a bug in iOS 5.0 that gives us trouble if we used our retained account.
             // If we get it again using the identifier then everything works fine.
-        ACAccountStore *accountStore = [[[ACAccountStore alloc] init] autorelease];
+        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
         twRequest.account = [accountStore accountWithIdentifier:((ACAccount *)account).identifier];
         postRequest = [twRequest signedURLRequest];
     }
@@ -154,7 +153,7 @@ NSString * const twitterStatusKey = @"status";
         postURL = [NSURL URLWithString:twitterPostWithImagesURLString];
     }
     
-    OAuth *oAuth = [[[OAuth alloc] initWithConsumerKey:kDEConsumerKey andConsumerSecret:kDEConsumerSecret] autorelease];
+    OAuth *oAuth = [[OAuth alloc] initWithConsumerKey:kDEConsumerKey andConsumerSecret:kDEConsumerSecret];
     [oAuth loadOAuthContext];
 
     NSString *header = nil;
@@ -186,7 +185,7 @@ NSString * const twitterStatusKey = @"status";
     else {
         header = [oAuth oAuthHeaderForMethod:@"POST" andUrl:[postURL absoluteString] andParams:tweetParameters];
         [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        postData = [[[postString dataUsingEncoding:NSUTF8StringEncoding] mutableCopy] autorelease];
+        postData = [[postString dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
         [postRequest setValue:[NSString stringWithFormat:@"%d", [postData length]] forHTTPHeaderField:@"Content-Length"];
     }
     

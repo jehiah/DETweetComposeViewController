@@ -67,7 +67,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"detwitter_oauth_token_secret"];
 	[[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"detwitter_oauth_token_authorized"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    OAuth *oAuth = [[[OAuth alloc] initWithConsumerKey:kDEConsumerKey andConsumerSecret:kDEConsumerSecret] autorelease];
+    OAuth *oAuth = [[OAuth alloc] initWithConsumerKey:kDEConsumerKey andConsumerSecret:kDEConsumerSecret];
     [oAuth forget];
 }
 

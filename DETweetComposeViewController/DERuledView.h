@@ -21,6 +21,6 @@
 
 @property (nonatomic) CGFloat rowHeight;
 @property (nonatomic) CGFloat lineWidth;
-@property (nonatomic, retain) UIColor *lineColor;
+@property (nonatomic) UIColor *lineColor;
 
 @end

@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		60C6B2EB1471CBEE0090278C /* OAuth+DEUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C6B2EA1471CBEE0090278C /* OAuth+DEUserDefaults.m */; };
 		60C6B2EE1471D47D0090278C /* OAuth+DEExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C6B2ED1471D47D0090278C /* OAuth+DEExtensions.m */; };
-		6925A81114590EB400011DA0 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7D714590EB400011DA0 /* NSObject+SBJSON.m */; };
-		6925A81214590EB400011DA0 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7D914590EB400011DA0 /* NSString+SBJSON.m */; };
-		6925A81314590EB400011DA0 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7DB14590EB400011DA0 /* SBJSON.m */; };
-		6925A81414590EB400011DA0 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7DD14590EB400011DA0 /* SBJsonBase.m */; };
-		6925A81514590EB400011DA0 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7DF14590EB400011DA0 /* SBJsonParser.m */; };
-		6925A81614590EB400011DA0 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7E114590EB400011DA0 /* SBJsonWriter.m */; };
 		6925A81E14590EB400011DA0 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7F914590EB400011DA0 /* Base64Transcoder.c */; };
 		6925A81F14590EB400011DA0 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7FB14590EB400011DA0 /* hmac.c */; };
 		6925A82014590EB400011DA0 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925A7FE14590EB400011DA0 /* OAHMAC_SHA1SignatureProvider.m */; };
@@ -88,19 +82,6 @@
 		60C6B2EA1471CBEE0090278C /* OAuth+DEUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "OAuth+DEUserDefaults.m"; path = "DETweetComposeViewController/OAuth+DEUserDefaults.m"; sourceTree = SOURCE_ROOT; };
 		60C6B2EC1471D4700090278C /* OAuth+DEExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OAuth+DEExtensions.h"; path = "DETweetComposeViewController/OAuth+DEExtensions.h"; sourceTree = SOURCE_ROOT; };
 		60C6B2ED1471D47D0090278C /* OAuth+DEExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "OAuth+DEExtensions.m"; path = "DETweetComposeViewController/OAuth+DEExtensions.m"; sourceTree = SOURCE_ROOT; };
-		6925A7D514590EB400011DA0 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		6925A7D614590EB400011DA0 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		6925A7D714590EB400011DA0 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		6925A7D814590EB400011DA0 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		6925A7D914590EB400011DA0 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		6925A7DA14590EB400011DA0 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		6925A7DB14590EB400011DA0 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		6925A7DC14590EB400011DA0 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		6925A7DD14590EB400011DA0 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		6925A7DE14590EB400011DA0 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		6925A7DF14590EB400011DA0 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		6925A7E014590EB400011DA0 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		6925A7E114590EB400011DA0 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		6925A7F914590EB400011DA0 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
 		6925A7FA14590EB400011DA0 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
 		6925A7FB14590EB400011DA0 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
@@ -220,7 +201,6 @@
 		6925A7D214590E6E00011DA0 /* unofficial-twitter-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				6925A7D414590EB400011DA0 /* JSON */,
 				6925A7E214590EB400011DA0 /* OAuth */,
 				6925A80D14590EB400011DA0 /* tclose.png */,
 				6925A80E14590EB400011DA0 /* ticon.png */,
@@ -229,27 +209,6 @@
 			);
 			name = "unofficial-twitter-sdk";
 			path = DETweeter;
-			sourceTree = "<group>";
-		};
-		6925A7D414590EB400011DA0 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				6925A7D514590EB400011DA0 /* JSON.h */,
-				6925A7D614590EB400011DA0 /* NSObject+SBJSON.h */,
-				6925A7D714590EB400011DA0 /* NSObject+SBJSON.m */,
-				6925A7D814590EB400011DA0 /* NSString+SBJSON.h */,
-				6925A7D914590EB400011DA0 /* NSString+SBJSON.m */,
-				6925A7DA14590EB400011DA0 /* SBJSON.h */,
-				6925A7DB14590EB400011DA0 /* SBJSON.m */,
-				6925A7DC14590EB400011DA0 /* SBJsonBase.h */,
-				6925A7DD14590EB400011DA0 /* SBJsonBase.m */,
-				6925A7DE14590EB400011DA0 /* SBJsonParser.h */,
-				6925A7DF14590EB400011DA0 /* SBJsonParser.m */,
-				6925A7E014590EB400011DA0 /* SBJsonWriter.h */,
-				6925A7E114590EB400011DA0 /* SBJsonWriter.m */,
-			);
-			name = JSON;
-			path = "unofficial-twitter-sdk/unoffical-twitter-sdk/JSON";
 			sourceTree = "<group>";
 		};
 		6925A7E214590EB400011DA0 /* OAuth */ = {
@@ -546,12 +505,6 @@
 				B6A1312B145768DB00500180 /* DEViewController.m in Sources */,
 				B6A1313A1457696000500180 /* DETweetComposeViewController.m in Sources */,
 				B6A1314814577D5A00500180 /* DETweetSheetCardView.m in Sources */,
-				6925A81114590EB400011DA0 /* NSObject+SBJSON.m in Sources */,
-				6925A81214590EB400011DA0 /* NSString+SBJSON.m in Sources */,
-				6925A81314590EB400011DA0 /* SBJSON.m in Sources */,
-				6925A81414590EB400011DA0 /* SBJsonBase.m in Sources */,
-				6925A81514590EB400011DA0 /* SBJsonParser.m in Sources */,
-				6925A81614590EB400011DA0 /* SBJsonWriter.m in Sources */,
 				6925A81E14590EB400011DA0 /* Base64Transcoder.c in Sources */,
 				6925A81F14590EB400011DA0 /* hmac.c in Sources */,
 				6925A82014590EB400011DA0 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
@@ -664,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DETweeter/DETweeter-Prefix.pch";
 				INFOPLIST_FILE = "DETweeter/DETweeter-Info.plist";
@@ -676,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DETweeter/DETweeter-Prefix.pch";
 				INFOPLIST_FILE = "DETweeter/DETweeter-Info.plist";

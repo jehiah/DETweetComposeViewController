@@ -36,18 +36,18 @@ static BOOL waitingForAccess = NO;
 @interface DETweetComposeViewController ()
 
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic, retain) NSMutableArray *images;
-@property (nonatomic, retain) NSMutableArray *urls;
-@property (nonatomic, retain) NSArray *attachmentFrameViews;
-@property (nonatomic, retain) NSArray *attachmentImageViews;
+@property (nonatomic) NSMutableArray *images;
+@property (nonatomic) NSMutableArray *urls;
+@property (nonatomic) NSArray *attachmentFrameViews;
+@property (nonatomic) NSArray *attachmentImageViews;
 @property (nonatomic) UIStatusBarStyle previousStatusBarStyle;
-@property (nonatomic, assign) UIViewController *fromViewController;
-@property (nonatomic, retain) UIImageView *backgroundImageView;
-@property (nonatomic, retain) DETweetGradientView *gradientView;
-@property (nonatomic, retain) UIPickerView *accountPickerView;
-@property (nonatomic, retain) UIPopoverController *accountPickerPopoverController;
-@property (nonatomic, retain) id twitterAccount;  // iOS 5 use only.
-@property (nonatomic, retain) OAuth *oAuth;
+@property (nonatomic, unsafe_unretainedunsafe_unretained) UIViewController *fromViewController;
+@property (nonatomic) UIImageView *backgroundImageView;
+@property (nonatomic) DETweetGradientView *gradientView;
+@property (nonatomic) UIPickerView *accountPickerView;
+@property (nonatomic) UIPopoverController *accountPickerPopoverController;
+@property (nonatomic) id twitterAccount;  // iOS 5 use only.
+@property (nonatomic) OAuth *oAuth;
 
 - (void)tweetComposeViewControllerInit;
 - (void)updateFramesForOrientation:(UIInterfaceOrientation)interfaceOrientation;
@@ -121,7 +121,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 + (BOOL)canAccessTwitterAccounts
 {
     if ([UIDevice de_isIOS5]) {
-        ACAccountStore *accountStore = [[[ACAccountStore alloc] init] autorelease];
+        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
         ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
         
         __block BOOL accessGranted = NO;
@@ -147,7 +147,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     BOOL canSendTweet = NO;
     
     if ([UIDevice de_isIOS5] && [[self class] canAccessTwitterAccounts]) {
-        ACAccountStore *accountStore = [[[ACAccountStore alloc] init] autorelease];
+        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
         ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
         NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
         if ([twitterAccounts count] > 0) {
@@ -167,11 +167,11 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     // We have an instance method that's identical to this. Make sure it stays identical.
     // This duplicates the message and buttons displayed in Apple's TWTweetComposeViewController alert message.
 {
-    UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Twitter Accounts", @"")
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Twitter Accounts", @"")
                                                          message:NSLocalizedString(@"There are no Twitter accounts configured. You can add or create a Twitter account in Settings.", @"")
                                                         delegate:self
                                                cancelButtonTitle:NSLocalizedString(@"Settings", @"")
-                                               otherButtonTitles:NSLocalizedString(@"Cancel", @""), nil] autorelease];
+                                               otherButtonTitles:NSLocalizedString(@"Cancel", @""), nil];
     alertView.tag = DETweetComposeViewControllerNoAccountsAlert;
     [alertView show];
 }
@@ -179,7 +179,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 + (NSArray *)systemTwitterAccounts
 {
-    ACAccountStore *accountStore = [[[ACAccountStore alloc] init] autorelease];
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     return [accountStore accountsWithAccountType:twitterAccountType];
 }
@@ -231,39 +231,38 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 - (void)dealloc
 {
         // IBOutlets
-    [_cardView release], _cardView = nil;
-    [_titleLabel release], _titleLabel = nil;
-    [_cancelButton release], _cancelButton = nil;
-    [_sendButton release], _sendButton = nil;
-    [_cardHeaderLineView release], _cardHeaderLineView = nil;
-    [_textView release], _textView = nil;
-    [_textViewContainer release], _textViewContainer = nil;
-    [_paperClipView release], _paperClipView = nil;
-    [_attachment1FrameView release], _attachment1FrameView = nil;
-    [_attachment2FrameView release], _attachment2FrameView = nil;
-    [_attachment3FrameView release], _attachment3FrameView = nil;
-    [_attachment1ImageView release], _attachment1ImageView = nil;
-    [_attachment2ImageView release], _attachment2ImageView = nil;
-    [_attachment3ImageView release], _attachment3ImageView = nil;
-    [_characterCountLabel release], _characterCountLabel = nil;
+    _cardView = nil;
+    _titleLabel = nil;
+    _cancelButton = nil;
+    _sendButton = nil;
+    _cardHeaderLineView = nil;
+    _textView = nil;
+    _textViewContainer = nil;
+    _paperClipView = nil;
+    _attachment1FrameView = nil;
+    _attachment2FrameView = nil;
+    _attachment3FrameView = nil;
+    _attachment1ImageView = nil;
+    _attachment2ImageView = nil;
+    _attachment3ImageView = nil;
+    _characterCountLabel = nil;
     
         // Public
-    [_completionHandler release], _completionHandler = nil;
+    _completionHandler = nil;
     
         // Private
-    [_text release], _text = nil;
-    [_images release], _images = nil;
-    [_urls release], _urls = nil;
-    [_attachmentFrameViews release], _attachmentFrameViews = nil;
-    [_attachmentImageViews release], _attachmentImageViews = nil;
-    [_backgroundImageView release], _backgroundImageView = nil;
-    [_gradientView release], _gradientView = nil;
-    [_accountPickerView release], _accountPickerView = nil;
-    [_accountPickerPopoverController release], _accountPickerPopoverController = nil;
-    [_twitterAccount release], _twitterAccount = nil;
-    [_oAuth release], _oAuth = nil;
+    _text = nil;
+    _images = nil;
+    _urls = nil;
+    _attachmentFrameViews = nil;
+    _attachmentImageViews = nil;
+    _backgroundImageView = nil;
+    _gradientView = nil;
+    _accountPickerView = nil;
+    _accountPickerPopoverController = nil;
+    _twitterAccount = nil;
+    _oAuth = nil;
     
-    [super dealloc];
 }
 
 
@@ -328,10 +327,10 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
         // If they don't match, just display the gray background.
     if (self.interfaceOrientation == self.fromViewController.interfaceOrientation) {
         UIImage *backgroundImage = [self captureView:[UIApplication sharedApplication].keyWindow];
-        self.backgroundImageView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+        self.backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
     }
     else {
-        self.backgroundImageView = [[[UIImageView alloc] initWithFrame:self.fromViewController.view.bounds] autorelease];
+        self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.fromViewController.view.bounds];
     }
     self.backgroundImageView.autoresizingMask = UIViewAutoresizingNone;
     self.backgroundImageView.alpha = 0.0f;
@@ -339,7 +338,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     [self.view insertSubview:self.backgroundImageView atIndex:0];
     
         // Now let's fade in a gradient view over the presenting view.
-    self.gradientView = [[[DETweetGradientView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds] autorelease];
+    self.gradientView = [[DETweetGradientView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
     self.gradientView.autoresizingMask = UIViewAutoresizingNone;
     self.gradientView.transform = self.fromViewController.view.transform;
     self.gradientView.alpha = 0.0f;
@@ -823,11 +822,11 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     // A private instance version of the class method with the same name.
     // This duplicates the message and buttons displayed in Apple's TWTweetComposeViewController alert message.
 {
-    UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Twitter Accounts", @"")
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Twitter Accounts", @"")
                                                          message:NSLocalizedString(@"There are no Twitter accounts configured. You can add or create a Twitter account in Settings.", @"")
                                                         delegate:self
                                                cancelButtonTitle:NSLocalizedString(@"Settings", @"")
-                                               otherButtonTitles:NSLocalizedString(@"Cancel", @""), nil] autorelease];
+                                               otherButtonTitles:NSLocalizedString(@"Cancel", @""), nil];
     alertView.tag = DETweetComposeViewControllerNoAccountsAlert;
     [alertView show];
 }
@@ -837,7 +836,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 {
     if ([UIDevice de_isPhone]) {
         if (self.accountPickerView == nil) {
-            self.accountPickerView = [[[UIPickerView alloc] init] autorelease];
+            self.accountPickerView = [[UIPickerView alloc] init];
             CGRect frame = self.accountPickerView.frame;
             frame.origin.y = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.accountPickerView.frame);
             self.accountPickerView.frame = frame;
@@ -852,10 +851,10 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     
     else {  // iPad
         if (self.accountPickerPopoverController == nil) {
-            DETweetAccountSelectorViewController *contentViewController = [[[DETweetAccountSelectorViewController alloc] init] autorelease];
+            DETweetAccountSelectorViewController *contentViewController = [[DETweetAccountSelectorViewController alloc] init];
             contentViewController.delegate = self;
             contentViewController.selectedAccount = self.twitterAccount;
-            self.accountPickerPopoverController = [[[UIPopoverController alloc] initWithContentViewController:contentViewController] autorelease];
+            self.accountPickerPopoverController = [[UIPopoverController alloc] initWithContentViewController:contentViewController];
             self.accountPickerPopoverController.delegate = self;
         }
         CGRect presentFromRect = [self.view convertRect:self.textView.fromButtonFrame fromView:self.textView];
@@ -869,7 +868,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     if (self.alwaysUseDETwitterCredentials == NO && [UIDevice de_isIOS5]) {
             // Try using iOS5 Twitter credentials
         if ([[self class] canAccessTwitterAccounts]) {
-            ACAccountStore *accountStore = [[[ACAccountStore alloc] init] autorelease];
+            ACAccountStore *accountStore = [[ACAccountStore alloc] init];
             ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
             NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
             if ([twitterAccounts count] < 1) {
@@ -881,8 +880,8 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     } else {
             // Present Twitter OAuth login if necessary
         if (![OAuth isTwitterAuthorized]) {
-            self.oAuth = [[[OAuth alloc] initWithConsumerKey:kDEConsumerKey andConsumerSecret:kDEConsumerSecret] autorelease];
-            TwitterDialog *td = [[[TwitterDialog alloc] init] autorelease];
+            self.oAuth = [[OAuth alloc] initWithConsumerKey:kDEConsumerKey andConsumerSecret:kDEConsumerSecret];
+            TwitterDialog *td = [[TwitterDialog alloc] init];
             td.twitterOAuth = self.oAuth;
             td.delegate = self;
             td.logindelegate = self;
@@ -960,11 +959,11 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 - (void)tweetFailed:(DETweetPoster *)tweetPoster
 {
-    UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Tweet", @"")
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Tweet", @"")
                                                          message:[NSString stringWithFormat:NSLocalizedString(@"The tweet, \"%@\" cannot be sent because the connection to Twitter failed.", @""), self.textView.text]
                                                         delegate:self
                                                cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
-                                               otherButtonTitles:NSLocalizedString(@"Try Again", @""), nil] autorelease];
+                                               otherButtonTitles:NSLocalizedString(@"Try Again", @""), nil];
     alertView.tag = DETweetComposeViewControllerCannotSendAlert;
     [alertView show];
     
@@ -977,11 +976,11 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     [OAuth clearCrendentials];
     [self dismissModalViewControllerAnimated:YES];
     
-    [[[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Tweet", @"")
+    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Tweet", @"")
                                  message:NSLocalizedString(@"Unable to login to Twitter with existing credentials. Try again with new credentials.", @"")
                                 delegate:nil
                        cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                       otherButtonTitles:nil] autorelease] show];
+                       otherButtonTitles:nil] show];
 }
 
 
@@ -1021,7 +1020,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
         tweet = [tweet stringByAppendingString:urlString];
     }
     
-    DETweetPoster *tweetPoster = [[[DETweetPoster alloc] init] autorelease];
+    DETweetPoster *tweetPoster = [[DETweetPoster alloc] init];
     tweetPoster.delegate = self;
     [tweetPoster postTweet:tweet withImages:self.images fromAccount:self.twitterAccount];
 }

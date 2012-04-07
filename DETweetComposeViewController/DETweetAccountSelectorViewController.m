@@ -25,7 +25,7 @@
 
 @interface DETweetAccountSelectorViewController ()
 
-@property(nonatomic,retain) NSArray *accounts;
+@property(nonatomic) NSArray *accounts;
 
 @end
 
@@ -45,10 +45,9 @@
 - (void)dealloc
 {
     _delegate = nil;
-    [_selectedAccount release], _selectedAccount = nil;
-    [_accounts release], _accounts = nil;
+    _selectedAccount = nil;
+    _accounts = nil;
     
-    [super dealloc];
 }
 
 
@@ -94,7 +93,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     ACAccount *account = [self.accounts objectAtIndex:indexPath.row];

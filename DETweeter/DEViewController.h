@@ -7,10 +7,10 @@
 
 @interface DEViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UIButton *deTweetButton;
-@property (retain, nonatomic) IBOutlet UIButton *twTweetButton;
-@property (retain, nonatomic) IBOutlet UIImageView *backgroundView;
-@property (retain, nonatomic) IBOutlet UIView *buttonView;
+@property ( nonatomic) IBOutlet UIButton *deTweetButton;
+@property ( nonatomic) IBOutlet UIButton *twTweetButton;
+@property ( nonatomic) IBOutlet UIImageView *backgroundView;
+@property ( nonatomic) IBOutlet UIView *buttonView;
 
 - (IBAction)tweetUs:(id)sender;
 - (IBAction)tweetThem:(id)sender;
